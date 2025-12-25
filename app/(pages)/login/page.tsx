@@ -80,7 +80,7 @@ export default function LoginPage() {
             Welcome Back
           </h1>
           <p className="text-[#61896B] text-base font-medium pt-2 text-center max-w-xs">
-            Enter your email to access your Neuraxis dashboard.
+            Enter your email to access the Lymph Flow Reset.
           </p>
         </div>
 

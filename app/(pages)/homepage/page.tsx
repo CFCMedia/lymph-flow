@@ -39,7 +39,7 @@ export default function HomeDashboardPage() {
               </p>
 
               <h2 className="text-xl font-bold leading-tight">
-                Matcha & Ginger Detox Elixir
+                Japanese Anti-Edema Detox Recipe
               </h2>
 
               <div className="flex gap-4 text-xs text-[#618975]">
