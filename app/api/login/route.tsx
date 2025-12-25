@@ -45,46 +45,47 @@ export async function POST(req: Request) {
     /* ---------- Query ---------- */
     console.log("🟢 [LOGIN] Step 4: Querying Supabase");
 
-    const { data, error } = await supabase
-      .from("shopify_orders")
-      .select("id, email, is_active")
-      .ilike("email", normalized)
-      .maybeSingle();
+    // const { data, error } = await supabase
+    //   .from("shopify_orders")
+    //   .select("id, email, is_active")
+    //   .ilike("email", normalized)
+    //   .maybeSingle();
 
-    console.log("🟢 [LOGIN] Supabase result:", { data, error });
+    // console.log("🟢 [LOGIN] Supabase result:", { data, error });
 
-    /* ---------- Errors ---------- */
-    if (error) {
-      console.error("🔴 [LOGIN] Supabase query error:", error);
-      return NextResponse.json(
-        { ok: false, error: "Database query failed." },
-        { status: 500 }
-      );
-    }
+    // /* ---------- Errors ---------- */
+    // if (error) {
+    //   console.error("🔴 [LOGIN] Supabase query error:", error);
+    //   return NextResponse.json(
+    //     { ok: false, error: "Database query failed." },
+    //     { status: 500 }
+    //   );
+    // }
 
-    // ❌ Email não encontrado
-    if (!data) {
-      console.warn("🔴 [LOGIN] Email not found:", normalized);
-      return NextResponse.json(
-        {
-          ok: false,
-          error: "Email not found. Access restricted to Neuraxis members.",
-        },
-        { status: 401 }
-      );
-    }
+    // // ❌ Email não encontrado
+    // if (!data) {
+    //   console.warn("🔴 [LOGIN] Email not found:", normalized);
+    //   return NextResponse.json(
+    //     {
+    //       ok: false,
+    //       error:
+    //         "Email not found. Access restricted to lymp flow reset members.",
+    //     },
+    //     { status: 401 }
+    //   );
+    // }
 
-    // 🚫 Conta inativa
-    if (data.is_active === false) {
-      console.warn("🔴 [LOGIN] Inactive account:", normalized);
-      return NextResponse.json(
-        {
-          ok: false,
-          error: "Inactive account. Please renew your membership.",
-        },
-        { status: 403 }
-      );
-    }
+    // // 🚫 Conta inativa
+    // if (data.is_active === false) {
+    //   console.warn("🔴 [LOGIN] Inactive account:", normalized);
+    //   return NextResponse.json(
+    //     {
+    //       ok: false,
+    //       error: "Inactive account. Please renew your membership.",
+    //     },
+    //     { status: 403 }
+    //   );
+    // }
 
     /* ---------- Success ---------- */
     console.log("🟢 [LOGIN] Step 5: Login authorized");

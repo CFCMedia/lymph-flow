@@ -122,7 +122,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="py-8 text-center">
           <p className="text-[#61896B] text-sm">
-            Access restricted to Neuraxis members
+            Access restricted to lymp flow reset members
           </p>
         </div>
       </div>
