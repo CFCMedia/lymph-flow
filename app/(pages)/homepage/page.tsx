@@ -1,221 +1,168 @@
 import BottomNavbar from "@/app/components/Navbar";
-import Link from "next/link";
-export default function HomeDashboardPage() {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Lymph Flow Reset – Recipe",
+};
+
+export default function RecipePage() {
   return (
-    <div className="bg-[#F6F8F7] font-display text-[#111814] antialiased min-h-screen">
-      <div className="relative min-h-screen max-w-md mx-auto bg-[#F6F8F7]">
-        {/* HEADER */}
-        <header className="flex items-center justify-between px-4 pt-4 pb-2">
-          {/* <span className="material-symbols-outlined text-2xl">menu</span> */}
-          <h1 className="mx-auto py-2 text-sm font-bold tracking-tight">
-            Your Daily Reset
-          </h1>
-          {/* <span className="material-symbols-outlined text-2xl">
-            account_circle
-          </span> */}
-        </header>
+    <>
+      <div className="bg-[#F6F8F7] min-h-screen font-display antialiased">
+        {/* APP CONTAINER */}
+        <div className="relative min-h-screen w-full max-w-md mx-auto bg-[#F6F8F7] shadow-2xl overflow-hidden">
+          {/* Background decorations */}
+          <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-[#E8F5F0] to-transparent pointer-events-none z-0 opacity-60" />
+          <div className="absolute top-[-50px] right-[-50px] w-64 h-64 bg-[#13EC80]/10 rounded-full blur-3xl pointer-events-none z-0" />
 
-        <main className="px-4 pb-24 space-y-4">
-          {/* MAIN CARD */}
-          <section className="bg-white rounded-2xl overflow-hidden border border-gray-100">
-            <div className="relative aspect-video bg-gray-200">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtfaX0Exg-T3lTN6FGEj8q9kSzIIsdAdSdDG4JleTDcwaFK8pHm-WCG-K7E-FW36zEywjqBy3wNx_utNCZwXLu9vlGN-wSEJQ8L5NIRgL5oupBrSFiYlyUk10MnKM3aRvXpA9TIoxcnxr-nyMFtDfMDWdRF29rUI0Uvas05-HXnqgA7f6HGKZEVh_vtvxyMXv0BpHiLCnIn7_4WAmrFqzEJFSXwN-UsvsnXNHo2N-42vHw4JAt3dzkeyQ-10gXPim19sVLy-Dv-YKn"
-                className="w-full h-full object-cover"
-                alt=""
-              />
-
-              <span className="absolute top-3 left-3 bg-white px-3 py-1 rounded-full text-[10px] font-bold flex items-center gap-1">
-                <span className="material-symbols-outlined text-xs">
-                  auto_awesome
-                </span>
-                AI Generated
+          {/* Header */}
+          <header className="relative z-20 flex items-center px-6 py-5 justify-between sticky top-0 bg-[#F6F8F7]/90 backdrop-blur-md border-b border-gray-200">
+            {/* <button className="flex size-10 items-center justify-center rounded-full bg-white/70 hover:bg-white transition shadow-sm border border-white/40">
+              <span className="material-symbols-outlined text-xl text-[#111814]">
+                arrow_back_ios_new
               </span>
-            </div>
+            </button> */}
 
-            <div className="p-4 space-y-3">
-              <p className="text-[11px] font-semibold text-emerald-600 [#13EC80] uppercase">
-                Recommended for Swelling Reduction
+            <span className="mx-auto font-bold text-lg tracking-tight text-[#111814]">
+              Recipe Details
+            </span>
+
+            {/* <button className="flex size-10 items-center justify-center rounded-full bg-white/70 hover:bg-white transition shadow-sm border border-white/40">
+              <span className="material-symbols-outlined text-xl text-[#111814]">
+                share
+              </span>
+            </button> */}
+          </header>
+
+          {/* Content */}
+          <main className="relative z-10 flex-1 overflow-y-auto no-scrollbar px-5 pb-32 pt-4 space-y-8">
+            {/* Intro */}
+            <div className="text-center">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-[#618975] text-xs font-bold tracking-wide uppercase mb-3">
+                <span className="material-symbols-outlined text-base">eco</span>
+                Natural Diuretic
+              </div>
+
+              <h1 className="text-2xl font-extrabold leading-tight tracking-tight text-[#111814] mb-3">
+                JAPANESE <br /> ANTI-SWELLING RECIPE
+              </h1>
+
+              <p className="text-sm text-[#618975] leading-relaxed px-2">
+                Based on scientific evidence of proven natural diuretic
+                ingredients to eliminate fluid retention.
               </p>
+            </div>
 
-              <h2 className="text-xl font-bold leading-tight">
-                Japanese Anti-Edema Detox Recipe
-              </h2>
-
-              <div className="flex gap-4 text-xs text-[#618975]">
-                <span className="flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">
-                    schedule
-                  </span>
-                  5 min prep
+            {/* Ingredients */}
+            <section className="bg-white rounded-2xl shadow-soft border border-gray-200 overflow-hidden">
+              <div className="bg-[#E0F2F1]/60 p-4 border-b border-gray-200 flex items-center gap-2">
+                <span className="material-symbols-outlined text-[#618975]">
+                  grocery
                 </span>
-                <span className="flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">
-                    local_fire_department
-                  </span>
-                  45 kcal
-                </span>
+                <h2 className="font-bold text-sm tracking-wide uppercase text-[#111814]">
+                  Ingredients
+                </h2>
               </div>
 
-              <button className="w-full h-11 rounded-xl bg-emerald-600 [#13EC80] text-white [#102219] font-bold text-sm flex items-center justify-center gap-2 active:scale-[0.98]">
-                <span className="material-symbols-outlined text-base">
-                  refresh
-                </span>
-                Generate New Recipe
-              </button>
-            </div>
-          </section>
+              <div className="p-5 space-y-6">
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-[#618975] mb-3">
+                    Main Base
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      "2 cups seedless watermelon cubes",
+                      "1 medium cucumber chopped (with skin)",
+                      "1 handful fresh parsley (approx. 1/4 cup)",
+                    ].map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="material-symbols-outlined text-[#13EC80] text-lg">
+                          check_circle
+                        </span>
+                        <span className="text-sm font-medium text-[#111814]">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-          {/* INFO */}
-          <section className="grid grid-cols-2 gap-3">
-            <InfoBox
-              icon="schedule"
-              title="Best Time"
-              value="08:00 AM"
-              desc="30 mins before breakfast"
-            />
-            <InfoList
-              icon="science"
-              title="The Science"
-              items={["Improves lymph circulation", "Reduces fluid retention"]}
-            />
-          </section>
-
-          {/* INGREDIENTS */}
-          <section className="bg-white rounded-2xl border border-gray-100">
-            <div className="p-4 pb-2">
-              <h3 className="font-bold text-sm">Ingredients</h3>
-            </div>
-
-            <div className="px-4 pb-2">
-              <div className="flex items-center gap-2 bg-[#F0F7F3] border border-[#13EC80]/30 rounded-xl p-3 text-xs">
-                <span className="material-symbols-outlined text-emerald-500 [#13EC80] text-base">
-                  tune
-                </span>
-                Smart adjustment: Low sodium preference
-              </div>
-            </div>
-
-            <ul className="px-4 pb-4 space-y-2">
-              {[
-                "Ceremonial Matcha (2g)",
-                "Warm Water (200ml)",
-                "Fresh Ginger (5g)",
-                "Manuka Honey (optional)",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex ps-4 items-center gap-3 text-sm last:border-0 py-2"
-                >
-                  <span className="w-5 h-5 rounded-md border border-emerald-500 [#13EC80] flex items-center justify-center">
-                    <span className="w-2 h-2 bg-emerald-500 [#13EC80] rounded-full" />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          {/* PREPARATION */}
-          <section>
-            <div className="flex justify-between items-center mb-2 px-1">
-              <h3 className="font-bold text-sm">Preparation Guide</h3>
-              <span className="text-xs text-emerald-600 [#13EC80] font-semibold">
-                View full steps
-              </span>
-            </div>
-
-            <div className="relative aspect-video rounded-2xl overflow-hidden">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzNMToWFPmuBYYP7bLvNc5RZRqk7yY5sQXwOpnYoK6qTOrHQdLlfPMvUqf13PU9jUJWxUKj8DVzwlJ66b2yWmQUVPzG_VOob8Tw-RgMdzIZtLBm8VoCcZnNWiVxn1JyxLmu7W8r1nYK5b5DOcRzK2sfUfNNUdodvnh-QsIVGizS0YRboK5FhL-_0YsGQl9AkLg1M04IvVGLqlJvlQAXJJhhFL-58Osl_aQm8ieZEs_VmdKqIwkOrHGkJPgZJc6rO7N9D1sHSORQGp1"
-                className="w-full h-full object-cover"
-                alt=""
-              />
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-4xl">
-                    play_arrow
-                  </span>
+                <div className="pt-4 border-t border-gray-200">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-[#618975] mb-3">
+                    Optional to Boost
+                  </h3>
+                  <ul className="space-y-3 opacity-80">
+                    {["Juice of 1 lemon", "1 glass cold water (200ml)"].map(
+                      (item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="material-symbols-outlined text-[#618975] text-lg">
+                            add_circle
+                          </span>
+                          <span className="text-sm text-[#111814]">{item}</span>
+                        </li>
+                      )
+                    )}
+                  </ul>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          {/* WARNING */}
-          <section className="bg-[#FFF4E8] border border-[#FFD9B5] rounded-2xl p-4 flex gap-3">
-            <span className="material-symbols-outlined text-orange-500">
-              warning
-            </span>
-            <p className="text-xs leading-relaxed">
-              Contains ginger. Limit intake if using blood thinners or consult a
-              specialist.
-            </p>
-          </section>
+            {/* Why ingredients */}
+            <section>
+              <h2 className="font-bold text-lg mb-4 flex items-center gap-2 text-[#111814]">
+                <span className="material-symbols-outlined text-[#13EC80]">
+                  science
+                </span>
+                Why these 3 ingredients?
+              </h2>
 
-          <div className=" bottom-0 left-0 right-0 bg-[#F6F8F7] px-4 pb-6 pt-3 max-w-md mx-auto">
-            <button className="w-full h-14 rounded-xl bg-[#111814] text-white font-bold text-base flex items-center justify-center gap-2">
-              <span className="material-symbols-outlined">check_circle</span>
-              Log as Consumed
+              <div className="space-y-4">
+                {[
+                  {
+                    name: "Watermelon",
+                    text: "92% water, rich in potassium and L-citrulline. Helps relax blood vessels and flush fluids.",
+                    source: "Dr. Axe",
+                  },
+                  {
+                    name: "Cucumber",
+                    text: "Rich in water & potassium. Naturally stimulates the kidneys to filter out toxins and reduce swelling.",
+                    source: "Tua Saúde",
+                  },
+                  {
+                    name: "Parsley",
+                    text: "Potent natural diuretic high in chlorophyll. Can multiply urine production to quickly expel retention.",
+                    source: "Vinmec",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.name}
+                    className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm"
+                  >
+                    <div className="flex justify-between mb-2">
+                      <h3 className="font-bold text-[#111814]">{item.name}</h3>
+                      <span className="text-[10px] bg-gray-100 px-2 py-1 rounded-md text-[#618975]">
+                        Source: {item.source}
+                      </span>
+                    </div>
+                    <p className="text-sm text-[#618975]">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </main>
+
+          {/* CTA */}
+          {/* <div className="absolute bottom-6 left-0 w-full z-20 px-6">
+            <button className="w-full bg-[#13EC80] hover:bg-[#0fd673] active:scale-[0.98] transition-all text-[#0A2E1E] font-bold text-lg h-14 rounded-xl shadow-lg shadow-[#13EC80]/30 flex items-center justify-center gap-2">
+              Start 14-Day Cycle
+              <span className="material-symbols-outlined text-xl">
+                arrow_forward
+              </span>
             </button>
-          </div>
-        </main>
-
-        {/* FIXED CTA */}
-
-        <BottomNavbar />
+          </div> */}
+        </div>
       </div>
-    </div>
-  );
-}
-
-/* ======= SMALL COMPONENTS ======= */
-
-function InfoBox({
-  icon,
-  title,
-  value,
-  desc,
-}: {
-  icon: string;
-  title: string;
-  value: string;
-  desc: string;
-}) {
-  return (
-    <div className="bg-white rounded-2xl border border-gray-100 p-4">
-      <div className="flex items-center gap-2 text-emerald-600 [#13EC80] mb-2">
-        <span className="material-symbols-outlined text-sm">{icon}</span>
-        <span className="text-xs font-bold uppercase">{title}</span>
-      </div>
-      <p className="text-lg font-bold">{value}</p>
-      <p className="text-xs text-[#618975]">{desc}</p>
-    </div>
-  );
-}
-
-function InfoList({
-  icon,
-  title,
-  items,
-}: {
-  icon: string;
-  title: string;
-  items: string[];
-}) {
-  return (
-    <div className="bg-white rounded-2xl border border-gray-100 p-4">
-      <div className="flex items-center gap-2 text-emerald-600 [#13EC80] mb-2">
-        <span className="material-symbols-outlined text-sm">{icon}</span>
-        <span className="text-xs font-bold uppercase">{title}</span>
-      </div>
-      <ul className="space-y-1">
-        {items.map((i) => (
-          <li key={i} className="text-xs flex gap-2">
-            <span className="w-1.5 h-1.5 mt-1 rounded-full bg-green-600 [#13EC80]" />
-            {i}
-          </li>
-        ))}
-      </ul>
-    </div>
+      <BottomNavbar />
+    </>
   );
 }

@@ -25,11 +25,11 @@ export default function BottomNavbar() {
       href: "/e-books",
       icon: HiBookOpen,
     },
-    {
-      label: "Recipe",
-      href: "/recipe",
-      icon: GiKnifeFork,
-    },
+    // {
+    //   label: "Recipe",
+    //   href: "/recipe",
+    //   icon: GiKnifeFork,
+    // },
   ];
 
   async function handleLogout() {

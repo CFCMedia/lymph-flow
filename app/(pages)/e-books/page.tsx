@@ -39,8 +39,9 @@ export default function EbooksPage() {
             tag="Morning Ritual"
             time="7 mins read"
             title="Accelerated Metabolism"
-            description="Includes bed movements & sabotaging foods guide to kickstart your day."
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuA_qZmD72vQKJ0JZCNtxXYdNrO0t3kQMQYw-Ja7LDjmUbTD-VK-TnK2OwZRl_uzfIBLJb0v5r4P0xd8V0mFk7OcwTFusE_HCbZtWlW-KIw0zkZpj0spoWAJ36hmuoZHoVmxptyPofejNmIaYKWHOS2Vwqg660l8AULOAiwqOkOjC1-ORZlyi0Y5ka99HrtLeH2COrHdyd6swQzKJhxMD0S-Pp7wrJi518O4HkJc1Adix5Hj3Bm3eo6H55RvxP--Rj4VmV6gh42wKpHq"
+            description="Ritual matinal japonês, 3 movimentos na cama e 5 alimentos que sabotam sua energia."
+            image="/books/1.png"
+            pdf="/books/1.pdf"
             primary
           />
 
@@ -49,8 +50,9 @@ export default function EbooksPage() {
             tag="Mindfulness"
             time="90 secs read"
             title="Anti-Cortisol Protocol"
-            description="Master your stress with Monk's breathing & Serenity tea recipe."
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuBYVvKBGnZ9Cb28-OiwOHD-OZz31W1cMRDORdq2kWa-0W5aD0bIFIBuuTmbsGBrJs_SKbGFaT__Vagqsc60GnRdBL7tqPbhkvBHkVw6lCErBrzp4qFr27GpAGk_LisOjOkTA2l4DIWfJEJbShirjsymF_yU9GLOmOXYLpoH8mVduT8srTOOgO7856aEQt972zvTHPx25wNISZKhBkEcHP57PBoaxowij9sI9XOGVpUaHAsuK98zvmqhSxcrKf4GKc9-SwFKUbNzx-s9"
+            description="Respiração dos Monges, Chá da Serenidade e rituais japoneses de equilíbrio."
+            image="/books/2.png"
+            pdf="/books/2.pdf"
             primary
           />
 
@@ -59,8 +61,9 @@ export default function EbooksPage() {
             tag="Beauty"
             time="12 mins read"
             title="Secret for Radiant Skin"
-            description="Go beyond surface level with lymphatic facial massage & skin nutrition."
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuDPh7iMnqF193YQX9gizaqkcatKFdj3q_6D1uA8Snm-saAehjGX7KnN9AvGqnB9_Vbw_8JHNIRx6OtBgwwt75bUPSdu-Wa58pQEKv_swgghtOU3VRW91Gw0bhkfc7rWzVxWpfHkB5w-9IEcfZ_2dfHXC1F4zkf0ZxwqNBWI1Qyor_iS_P2lhLfPrJcglit8CjZIzbkhj2pFtmesE_eIVyapZSFWF8Ud1amqpyHydedEBTNalW6LkCvzCjCNwb6nv47b9w40JtrU8AVd"
+            description="Máscara facial japonesa, massagem linfática e nutrição para a pele."
+            image="/books/3.png"
+            pdf="/books/3.pdf"
             primary
           />
         </div>
@@ -87,6 +90,7 @@ function EbookCard({
   title,
   description,
   image,
+  pdf,
   primary,
 }: {
   tag: string;
@@ -94,6 +98,7 @@ function EbookCard({
   title: string;
   description: string;
   image: string;
+  pdf: string;
   primary?: boolean;
 }) {
   return (
@@ -123,19 +128,21 @@ function EbookCard({
           </p>
         </div>
 
-        <button
+        <a
+          href={pdf}
+          download
           className={`h-12 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition
-            ${
-              primary
-                ? "bg-emerald-500 hover:bg-emerald-600 text-white [#0d3323]"
-                : "border-2 border-primary text-[#0d3323] hover:bg-primary"
-            }`}
+    ${
+      primary
+        ? "bg-emerald-500 hover:bg-emerald-600 text-white"
+        : "border-2 border-primary text-[#0d3323] hover:bg-primary"
+    }`}
         >
           <span className="material-symbols-outlined text-[20px]">
             download
           </span>
           Download PDF
-        </button>
+        </a>
       </div>
     </div>
   );
